@@ -22,3 +22,5 @@ src/libnoise.dylib
 doc/Doxyfile
 doc/html
 
+# visual studio 
+.vs
