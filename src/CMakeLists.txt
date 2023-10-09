@@ -18,6 +18,7 @@ set(libSrcs ${libSrcs}
     module/billow.cpp
     module/blend.cpp
     module/cache.cpp
+    module/ceil.cpp
     module/checkerboard.cpp
     module/clamp.cpp
     module/const.cpp
@@ -25,6 +26,7 @@ set(libSrcs ${libSrcs}
     module/cylinders.cpp
     module/displace.cpp
     module/exponent.cpp
+    module/floor.cpp
     module/invert.cpp
     module/max.cpp
     module/min.cpp
@@ -45,7 +47,7 @@ set(libSrcs ${libSrcs}
 )
 
 IF(BUILD_SHARED_LIBS AND WIN32)
-    set(libSrcs ${libSrcs} win32/dllmain.cpp)    
+    set(libSrcs ${libSrcs} win32/dllmain.cpp)
 ENDIF()
 
 add_library( noise ${LIBNOISE_LIBRARY_TYPE} ${libSrcs} )
@@ -58,7 +60,7 @@ if(BUILD_SHARED_LIBS)
 else()
     target_compile_definitions( noise PUBLIC NOISE_STATIC)
 endif()
-    
+
 
 set_target_properties( noise PROPERTIES OUTPUT_NAME "noise" )
 
@@ -72,7 +74,7 @@ elseif (CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
 endif()
 
 # install include files into /include
-install( DIRECTORY "${PROJECT_SOURCE_DIR}/src/noise" 
+install( DIRECTORY "${PROJECT_SOURCE_DIR}/src/noise"
 		DESTINATION "${CMAKE_INSTALL_PREFIX}/include" )
 
 # install dynamic libraries (.dll or .so) into /bin

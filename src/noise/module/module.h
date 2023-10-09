@@ -23,18 +23,20 @@
 #ifndef NOISE_MODULE_H
 #define NOISE_MODULE_H
 
-#include "add.h"
 #include "abs.h"
+#include "add.h"
 #include "billow.h"
 #include "blend.h"
 #include "cache.h"
 #include "checkerboard.h"
+#include "ceil.h"
 #include "clamp.h"
 #include "const.h"
 #include "curve.h"
 #include "cylinders.h"
 #include "displace.h"
 #include "exponent.h"
+#include "floor.h"
 #include "invert.h"
 #include "max.h"
 #include "min.h"
@@ -51,5 +53,6 @@
 #include "translatepoint.h"
 #include "turbulence.h"
 #include "voronoi.h"
+
 
 #endif
